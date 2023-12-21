@@ -74,13 +74,9 @@ void print(ostream& out = cout) const {
     }
     cout << endl;
 
-    cout << "Liste des elements (" << numelts.size() / 2 << " " << (dim == 1 ? "segments" : "triangles") << ")" << endl;
+    cout << "Liste des elements (" << numelts.size() << " " << (dim == 1 ? "segments" : "triangles") << ")" << endl;
     for (const Numeros& N : numelts) {
-        out << "(";
-        for (int i : N) {
-            out << i << ",";
-        }
-        out << "),";
+        out <<N;
     }
 
     cout << endl;

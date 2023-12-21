@@ -145,9 +145,9 @@ ostream& operator<<(ostream& out, const Maillage& m) {
 Maillage1D::Maillage1D(double a, double b, int m):Maillage(1,"segments"){
     noeuds.resize(m+1);
     for(int i =0 ;i<=m;i++){
-        noeuds[i]=a+i+(b-a)/(m);
+        noeuds[i]=a+i*(b-a)/(m);
     }
-    numelts.resize(m);
+    numelts.clear();
     for(int i =0 ;i<m;i++){
         numelts.push_back({i, i + 1});
     }
