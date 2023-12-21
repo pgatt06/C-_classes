@@ -66,22 +66,28 @@ class Maillage
  Maillage(int d=0, const string& geo="") : dim(d), geometrie(geo) {}
 
 
- void print(ostream& out=cout) const{
-        cout<<"Maillage du"<<(dim == 1 ? "segment" : "triangle")<<geometrie<<endl;
-        cout <<"liste des noeuds ( " << noeuds.size() <<"points )"<<endl;
-        for (const Point& p : noeuds) {
+void print(ostream& out = cout) const {
+    cout << "Maillage du " << (dim == 1 ? "segment" : "triangle") << geometrie << endl;
+    cout << "liste des noeuds ( " << noeuds.size() << " points )" << endl;
+    for (const Point& p : noeuds) {
         cout << "(" << p.x << "," << p.y << "),";
     }
-        cout << endl;
+    cout << endl;
 
-       cout << "Liste des elements (" << numelts.size()/2 << " " << (dim == 1 ? "segments" : "triangles") << ")" << endl;
-        for (const Numeros & N : numelts) {
-            out << "(" << N << "),";
+    cout << "Liste des elements (" << numelts.size() / 2 << " " << (dim == 1 ? "segments" : "triangles") << ")" << endl;
+    for (const Numeros& N : numelts) {
+        out << "(";
+        for (int i : N) {
+            out << i << ",";
         }
-        cout << endl;
-    
-    };;      // affichage du maillage
+        out << "),";
+    }
+
+    cout << endl;
 };
+
+};
+
 
 ostream& operator<<(ostream& out,const Maillage& M);
 //---------------------------------------------------------------------------

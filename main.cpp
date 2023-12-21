@@ -44,4 +44,4 @@ int main(int argc, char * argv[] )
   // // cout<<"erreur L2 = "<< helm2.calculErreur()<<endl;
   // // helm2.exporte("sol2D");
   return (0);
-}
+};
